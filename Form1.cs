@@ -308,6 +308,8 @@ namespace Caculator
                 {
                     String Oper = HistoryDGV.Rows[e.RowIndex].Cells["Operator"].Value?.ToString()??"+";
                     Double num1, num2,result=0;
+
+
                     if (!Double.TryParse(HistoryDGV.Rows[e.RowIndex].Cells["Num1"].Value?.ToString(),out num1)||
                         !Double.TryParse(HistoryDGV.Rows[e.RowIndex].Cells["Num2"].Value?.ToString(), out num2))
                     {
@@ -330,6 +332,7 @@ namespace Caculator
                             break;
                     }
                     HistoryDGV.Rows[e.RowIndex].Cells["Result"].Value = result;
+
                 }
             }
             catch(Exception ex)
@@ -357,6 +360,7 @@ namespace Caculator
                 MessageBox.Show(ex.Message, "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         #endregion
     }
 }
